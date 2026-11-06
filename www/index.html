@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>عسل‌آباد</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1e8ff;--card:#fff;--ink:#2a1450;--mut:#7c68a3;--p1:#5b21d6;--p2:#8b3dff;--gold:#f5b82e;--line:#e2d3fb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b0d3a;--card:#2a1655;--ink:#f3eaff;--mut:#b49ee0;--line:#42267f}}
+:root[data-theme="dark"]{--bg:#1b0d3a;--card:#2a1655;--ink:#f3eaff;--mut:#b49ee0;--line:#42267f}
+*{box-sizing:border-box;margin:0;font-family:Vazirmatn,Tahoma,sans-serif}
+html,body{height:100%;background:var(--bg);color:var(--ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--p1);z-index:10}
+#app{height:100%;max-width:480px;margin:auto;display:flex;flex-direction:column;position:relative}
+header{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+header .sp{flex:1}
+header button{background:rgba(255,255,255,.2);border:0;color:#fff;border-radius:12px;padding:6px 10px;font-size:15px}
+main{flex:1;overflow:auto;padding:14px}
+nav{display:flex;background:var(--card);border-top:1px solid var(--line)}
+nav button{flex:1;background:none;border:0;padding:8px 0;color:var(--mut);font-size:12px;display:flex;flex-direction:column;align-items:center;gap:2px}
+nav button span{font-size:22px}
+nav button.on{color:var(--p2);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(91,33,214,.12)}
+.row{display:flex;align-items:center;gap:12px}
+.av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,#c9a4ff,#8b3dff);border:2px solid var(--gold);flex:none}
+.grow{flex:1}.mut{color:var(--mut);font-size:12px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#2fcf6a;margin-left:4px}
+.lv{color:var(--p2);font-size:12px;font-weight:600}
+.btn{width:100%;border:0;border-radius:16px;padding:13px;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-weight:800;font-size:16px}
+.btn.sm{width:auto;padding:8px 14px;font-size:13px;border-radius:12px}
+input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;padding:13px;font-size:15px;margin-bottom:10px}
+#login{position:absolute;inset:0;z-index:5;background:radial-gradient(circle at 50% 20%,#8b3dff,#3c0f9e 70%);display:flex;flex-direction:column;justify-content:center;padding:28px;color:#fff;text-align:center}
+#login h1{font-size:44px;font-weight:800}#login .crown{font-size:70px}
+#login p{margin:8px 0 22px}#login small{display:block;margin-top:26px;opacity:.8}
+#chat{display:flex;flex-direction:column;height:100%}
+#msgs{flex:1;overflow:auto;display:flex;flex-direction:column;gap:8px;padding-bottom:8px}
+.b{max-width:78%;padding:10px 13px;border-radius:16px;background:var(--card);align-self:flex-start;border-top-right-radius:4px}
+.b.me{align-self:flex-end;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;border-radius:16px;border-top-left-radius:4px}
+.b i{display:block;font-size:10px;opacity:.7;font-style:normal;margin-top:3px}
+.b em{display:block;font-size:11px;color:var(--p2);font-style:normal;font-weight:800}
+.send{display:flex;gap:8px;align-items:center;padding-top:6px}.send input{margin:0}
+.send button{width:46px;height:46px;border-radius:50%;border:0;background:var(--p2);color:#fff;font-size:20px;flex:none}
+.emo{display:flex;gap:8px;padding:6px 0;overflow:auto}.emo button{font-size:24px;background:var(--card);border:0;border-radius:12px;padding:4px 8px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}.tabs button{flex:1;padding:8px;border:0;border-radius:14px;background:var(--card);color:var(--mut);font-weight:600}.tabs .on{background:var(--p2);color:#fff}
+.price{background:#ffe9a8;color:#5a3d00;border-radius:12px;padding:5px 10px;font-size:12px;font-weight:800}
+.pro{text-align:center}.pro .av{width:96px;height:96px;font-size:48px;margin:auto}
+.sw{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+#toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:20}
+</style>
+</head>
+<body>
+<div id="app">
+<section id="login">
+  <div class="crown">👑💎</div>
+  <h1>عسل‌آباد</h1>
+  <p>به دنیای عسل‌آباد خوش آمدید 💜</p>
+  <input id="u" placeholder="نام کاربری یا شماره موبایل" autocomplete="off">
+  <input id="pw" type="password" placeholder="رمز عبور">
+  <button class="btn" onclick="login()">ورود به حساب</button>
+  <small>ساخته‌شده توسط پریا چش رنگی 🐻</small>
+</section>
+<header><span id="ttl">عسل‌آباد</span><span class="sp"></span><button onclick="go('wallet')">💎 <b id="dm">300</b></button><button onclick="go('set')">⚙️</button></header>
+<main id="main"></main>
+<nav id="nav"></nav>
+</div>
+<div id="toast"></div>
+<script>
+var me={name:'',dm:300,coin:50,lv:1},cur='home',peer=null,users=[
+{n:'پریا چش رنگی',e:'👸',lv:78},{n:'مهسا',e:'👩',lv:65},{n:'امیرحسین',e:'🧑',lv:62},{n:'دینا',e:'👩‍🦰',lv:60},{n:'علی',e:'🧔',lv:55}];
+var rooms=[{n:'گروه دوستان',e:'👥',m:28},{n:'عسل‌آباد گیم',e:'🎮',m:112},{n:'گروه رویایی',e:'✨',m:340}];
+var hist={},bc=null,tabId=Math.random().toString(36).slice(2);
+try{bc=new BroadcastChannel('asalabad')}catch(e){}
+try{var s=localStorage.getItem('asal_me');if(s){me=JSON.parse(s);document.getElementById('login').style.display='none'}}catch(e){}
+function save(){try{localStorage.setItem('asal_me',JSON.stringify(me))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function toast(t){var x=$('toast');x.textContent=t;x.style.opacity=1;setTimeout(function(){x.style.opacity=0},1800)}
+function login(){var n=$('u').value.trim();if(!n){toast('نام کاربری را وارد کنید');return}me.name=n;save();$('login').style.display='none';render()}
+var tabs=[['home','🏠','خانه'],['msg','💬','پیام‌ها'],['shop','🛒','فروشگاه'],['prof','👤','پروفایل'],['stat','📊','آمار']];
+function go(p){cur=p;peer=null;render()}
+function render(){
+ $('dm').textContent=me.dm;
+ $('nav').innerHTML=tabs.map(function(t){return '<button class="'+(cur==t[0]?'on':'')+'" onclick="go(\''+t[0]+'\')"><span>'+t[1]+'</span>'+t[2]+'</button>'}).join('');
+ var T={home:'عسل‌آباد',msg:'پیام‌ها',shop:'فروشگاه',prof:'پروفایل',stat:'رتبه‌بندی گروه‌ها',wallet:'کیف پول',set:'تنظیمات',chat:peer?peer.n:''};
+ $('ttl').textContent=T[cur];var m=$('main');
+ if(cur=='home')m.innerHTML='<p class="mut" style="margin-bottom:8px"><span class="dot"></span>کاربران آنلاین ('+(245+users.length)+' نفر)</p>'+users.map(function(u,i){return '<div class="card row" onclick="openChat('+i+')"><div class="av">'+u.e+'</div><div class="grow"><b>'+u.n+'</b><div class="mut"><span class="dot"></span>آنلاین</div></div><span class="lv">💎 Lv.'+u.lv+'</span></div>'}).join('');
+ if(cur=='msg')m.innerHTML=rooms.map(function(r,i){return '<div class="card row" onclick="openRoom('+i+')"><div class="av">'+r.e+'</div><div class="grow"><b>'+r.n+'</b><div class="mut">اعضا: '+r.m+' نفر</div></div></div>'}).join('')+'<p class="mut">با دو تب مرورگر روی یک گوشی، چت گروهی زنده را امتحان کنید.</p>';
+ if(cur=='shop'){var P=[['بسته کوچک',100,'۹۹,۰۰۰'],['بسته ویژه',500,'۴۹۹,۰۰۰'],['بسته طلایی',1000,'۹۹۹,۰۰۰']];
+  m.innerHTML='<div class="tabs"><button class="on">الماس</button><button onclick="toast(\'به‌زودی\')">هدیه</button><button onclick="toast(\'به‌زودی\')">استیکر</button></div>'+P.map(function(p){return '<div class="card row"><div style="font-size:38px">💎</div><div class="grow"><b>'+p[0]+'</b><div class="mut">'+p[1]+' الماس</div></div><button class="btn sm" onclick="buy('+p[1]+')">آزمایشی</button><span class="price">'+p[2]+' تومان</span></div>'}).join('')+'<p class="mut">خرید در این نسخه آزمایشی است و پرداخت واقعی ندارد.</p>'}
+ if(cur=='prof')m.innerHTML='<div class="card pro"><div class="av">👸</div><h3 style="margin-top:8px">'+me.name+'</h3><div class="lv">⭐ سطح '+me.lv+'</div></div><div class="card"><b>بیوگرافی</b><p class="mut" id="bio">'+(localStorage.getItem('asal_bio')||'هنوز چیزی ننوشته‌اید')+'</p></div><button class="btn" onclick="eb()">ویرایش پروفایل</button><button class="btn" style="margin-top:10px;background:#e0345a" onclick="out()">خروج</button>';
+ if(cur=='wallet')m.innerHTML='<div class="row"><div class="card grow pro"><div style="font-size:40px">💎</div><b>'+me.dm+'</b><div class="mut">الماس</div></div><div class="card grow pro"><div style="font-size:40px">🪙</div><b>'+me.coin+'</b><div class="mut">سکه</div></div></div><div class="card"><b>تاریخچه تراکنش‌ها</b><p class="mut">هدیه از مهسا: +۵۰ الماس</p></div>';
+ if(cur=='stat')m.innerHTML=[['👑','گروه رویایی'],['🥈','دوستان خاص'],['🥉','عسل‌آباد گیم']].map(function(r,i){return '<div class="card row"><div style="font-size:34px">'+r[0]+'</div><b class="grow">'+r[1]+'</b><b style="font-size:22px;color:var(--gold)">'+(i+1)+'</b></div>'}).join('');
+ if(cur=='set')m.innerHTML=['اعلان‌ها','حریم خصوصی','تغییر رمز عبور'].map(function(s){return '<div class="sw" onclick="toast(\'ذخیره شد\')"><span>'+s+'</span><span>‹</span></div>'}).join('')+'<div class="sw" onclick="dark()"><span>حالت شب</span><span>🌙</span></div>';
+ if(cur=='chat')drawChat();
+}
+function buy(n){me.dm+=n;save();render();toast(n+' الماس اضافه شد')}
+function eb(){var b=prompt('بیوگرافی:');if(b!==null){localStorage.setItem('asal_bio',b);render()}}
+function out(){localStorage.removeItem('asal_me');location.reload()}
+function dark(){var r=document.documentElement;r.setAttribute('data-theme',r.getAttribute('data-theme')=='dark'?'light':'dark')}
+var key='';
+function openChat(i){peer=users[i];key='dm:'+peer.n;cur='chat';render()}
+function openRoom(i){peer=rooms[i];key='room:'+peer.n;cur='chat';render()}
+function drawChat(){
+ $('main').innerHTML='<div id="chat"><div id="msgs"></div><div class="emo">'+['😍','💜','🌹','👌','😂','🎁'].map(function(e){return '<button onclick="sendT(\''+e+'\')">'+e+'</button>'}).join('')+'</div><div class="send"><input id="mi" placeholder="پیام خود را بنویسید..." onkeydown="if(event.key==\'Enter\')sendT()"><button onclick="sendT()">➤</button></div></div>';
+ paint()}
+function paint(){var d=$('msgs');if(!d)return;d.innerHTML=(hist[key]||[]).map(function(x){return '<div class="b'+(x.me?' me':'')+'">'+(!x.me&&key.indexOf('room')==0?'<em>'+esc(x.from)+'</em>':'')+esc(x.t)+'<i>'+x.time+'</i></div>'}).join('');d.scrollTop=d.scrollHeight}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function now(){return new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'})}
+function add(k,o){(hist[k]=hist[k]||[]).push(o);if(k==key)paint()}
+function sendT(t){var i=$('mi');t=t||(i&&i.value.trim());if(!t)return;if(i)i.value='';
+ add(key,{t:t,me:true,time:now(),from:me.name});
+ if(bc&&key.indexOf('room')==0)bc.postMessage({k:key,t:t,from:me.name,id:tabId});
+ if(key.indexOf('dm')==0){var k=key;setTimeout(function(){add(k,{t:['سلام عزیزم 💜','قشنگ بود 😍','ممنون از حضورت'][Math.floor(Math.random()*3)],time:now()})},1100)}}
+if(bc)bc.onmessage=function(e){var d=e.data;if(d.id==tabId)return;add(d.k,{t:d.t,from:d.from,time:now()})};
+render();
+</script>
+</body>
+</html>
